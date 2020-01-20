@@ -1,29 +1,45 @@
 package com.guren.arithmetic.payload;
 
 public class ListNode {
-  int val;
-  ListNode next;
+    private int val;
+    private ListNode next;
 
-  public ListNode(int x) {
-    val = x;
-  }
+    public static ListNode getListNodeThreeNodes(int a, int b, int c) {
+        ListNode next = new ListNode(a);
+        ListNode listNode1 = new ListNode(b);
+        ListNode listNode2 = new ListNode(c);
+        listNode1.setNext(listNode2);
+        next.setNext(listNode1);
+        return next;
+    }
 
-  public int getVal() {
-    return val;
-  }
+    public static void listLinked(ListNode listNode) {
+        while (listNode != null) {
+            System.out.println(listNode.getVal());
+            listNode = listNode.getNext();
+        }
+    }
 
-  public void setVal(int val) {
-    this.val = val;
-  }
+    public ListNode(int x) {
+        val = x;
+    }
 
-  public ListNode getNext() {
-    return next;
-  }
+    public int getVal() {
+        return val;
+    }
 
-  public void setNext(ListNode next) {
-    this.next = next;
-  }
+    public void setVal(int val) {
+        this.val = val;
+    }
 
-  public ListNode() {
-  }
+    public ListNode getNext() {
+        return next;
+    }
+
+    public void setNext(ListNode next) {
+        this.next = next;
+    }
+
+    public ListNode() {
+    }
 }
